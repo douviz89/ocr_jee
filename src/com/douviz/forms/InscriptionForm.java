@@ -54,9 +54,9 @@ public class InscriptionForm {
         utilisateur.setNom( nom );
 
         if ( erreurs.isEmpty() ) {
-            resultat = "SuccÃ¨s de l'inscription.";
+            resultat = "Succés de l'inscription.";
         } else {
-            resultat = "Ã‰chec de l'inscription.";
+            resultat = "échec de l'inscription.";
         }
 
         return utilisateur;
