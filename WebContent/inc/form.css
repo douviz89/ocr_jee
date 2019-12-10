@@ -42,3 +42,8 @@ form .succes {
 form .erreur {
     color: #900;
 }
+
+form .info {
+    font-style: italic;
+    color: #E8A22B;
+}
