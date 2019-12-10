@@ -22,7 +22,7 @@ public class Inscription extends HttpServlet {
 
     public void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
-
+    	
         /* Préparation de l'objet formulaire */
         InscriptionForm form = new InscriptionForm();
 

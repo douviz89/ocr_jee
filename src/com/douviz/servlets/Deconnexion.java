@@ -17,6 +17,6 @@ public class Deconnexion extends HttpServlet {
         session.invalidate();
 
         /* Affichage de la page de connexion */
-        response.sendRedirect("/ocr_pro/connexion");
+        response.sendRedirect( request.getContextPath() + "/connexion");
     }
 }

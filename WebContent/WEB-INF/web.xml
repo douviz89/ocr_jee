@@ -3,37 +3,59 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
-	<display-name>ocr_pro</display-name>
+	<display-name>pro</display-name>
 
+	<!-- La servlet peut être configurée avec l'annotation @WebServlet au lieu 
+		de XML -->
 	<servlet>
 		<servlet-name>Inscription</servlet-name>
 		<servlet-class>com.douviz.servlets.Inscription</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Inscription</servlet-name>
 		<url-pattern>/inscription</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>Connexion</servlet-name>
 		<servlet-class>com.douviz.servlets.Connexion</servlet-class>
 	</servlet>
-
-
 	<servlet-mapping>
 		<servlet-name>Connexion</servlet-name>
 		<url-pattern>/connexion</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>Deconnexion</servlet-name>
 		<servlet-class>com.douviz.servlets.Deconnexion</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Deconnexion</servlet-name>
 		<url-pattern>/deconnexion</url-pattern>
 	</servlet-mapping>
+
+	<!-- <filter>
+		<filter-name>RestrictionFilter</filter-name>
+		<filter-class>com.douviz.filters.RestrictionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RestrictionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ignore</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 
 </web-app>
