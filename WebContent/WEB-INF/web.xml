@@ -30,7 +30,7 @@
 	<servlet-mapping>
 		<servlet-name>Deconnexion</servlet-name>
 		<url-pattern>/deconnexion</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>	
 
 	<!-- <filter>
 		<filter-name>RestrictionFilter</filter-name>
