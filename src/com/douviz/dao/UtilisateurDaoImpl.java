@@ -1,7 +1,6 @@
 package com.douviz.dao;
 
-import static com.douviz.dao.DAOUtilitaire.fermeturesSilencieuses;
-import static com.douviz.dao.DAOUtilitaire.initialisationRequetePreparee;
+import static com.douviz.dao.DAOUtilitaire.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

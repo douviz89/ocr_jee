@@ -30,16 +30,16 @@
 	<servlet-mapping>
 		<servlet-name>Deconnexion</servlet-name>
 		<url-pattern>/deconnexion</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
 
-	<!-- <filter>
-		<filter-name>RestrictionFilter</filter-name>
-		<filter-class>com.douviz.filters.RestrictionFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>RestrictionFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
+	
+	<listener>
+		<listener-class>com.douviz.config.InitialisationDaoFactory</listener-class>
+	</listener>
+
+	<!-- <filter> <filter-name>RestrictionFilter</filter-name> <filter-class>com.douviz.filters.RestrictionFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>RestrictionFilter</filter-name> <url-pattern>/*</url-pattern> 
+		</filter-mapping> -->
 	<filter>
 		<filter-name>Set Character Encoding</filter-name>
 		<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>

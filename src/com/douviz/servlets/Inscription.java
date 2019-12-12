@@ -8,12 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.douviz.beans.Utilisateur;
+import com.douviz.dao.DAOFactory;
+import com.douviz.dao.UtilisateurDao;
 import com.douviz.forms.InscriptionForm;
 
 public class Inscription extends HttpServlet {
+	public static final String CONF_DAO_FACTORY = "daofactory";
     public static final String ATT_USER = "utilisateur";
     public static final String ATT_FORM = "form";
     public static final String VUE      = "/WEB-INF/inscription.jsp";
+    
+    private UtilisateurDao utilisateurDao;
+    
+    public void init() {
+    	this.utilisateurDao = ((DAOFactory) getServletContext().getAttribute(CONF_DAO_FACTORY)).getUtilisateurDao();
+    }
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* Affichage de la page d'inscription */
@@ -24,7 +33,7 @@ public class Inscription extends HttpServlet {
             throws ServletException, IOException {
     	
         /* Préparation de l'objet formulaire */
-        InscriptionForm form = new InscriptionForm();
+        InscriptionForm form = new InscriptionForm(utilisateurDao);
 
         /*
          * Appel au traitement et à la validation de la requête, et récupération
