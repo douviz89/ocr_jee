@@ -62,7 +62,7 @@ public final class InscriptionForm {
     }
 
     /*
-     * Appel �  la validation de l'adresse email reçue et initialisation de la
+     * Appel � la validation de l'adresse email reçue et initialisation de la
      * propriété email du bean
      */
     private void traiterEmail( String email, Utilisateur utilisateur ) {
@@ -75,7 +75,7 @@ public final class InscriptionForm {
     }
 
     /*
-     * Appel �  la validation des mots de passe reçus, chiffrement du mot de
+     * Appel � la validation des mots de passe reçus, chiffrement du mot de
      * passe et initialisation de la propriété motDePasse du bean
      */
     private void traiterMotsDePasse( String motDePasse, String confirmation, Utilisateur utilisateur ) {
@@ -104,7 +104,7 @@ public final class InscriptionForm {
     }
 
     /*
-     * Appel �  la validation du nom reçu et initialisation de la propriété nom
+     * Appel � la validation du nom reçu et initialisation de la propriété nom
      * du bean
      */
     private void traiterNom( String nom, Utilisateur utilisateur ) {
@@ -122,7 +122,8 @@ public final class InscriptionForm {
             if ( !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
                 throw new FormValidationException( "Merci de saisir une adresse mail valide." );
             } else if ( utilisateurDao.trouver( email ) != null ) {
-                throw new FormValidationException( "Cette adresse email est déj�  utilisée, merci d'en choisir une autre." );
+                throw new FormValidationException(
+                        "Cette adresse email est déjà  utilisée, merci d'en choisir une autre." );
             }
         } else {
             throw new FormValidationException( "Merci de saisir une adresse mail." );
@@ -133,7 +134,8 @@ public final class InscriptionForm {
     private void validationMotsDePasse( String motDePasse, String confirmation ) throws FormValidationException {
         if ( motDePasse != null && confirmation != null ) {
             if ( !motDePasse.equals( confirmation ) ) {
-                throw new FormValidationException( "Les mots de passe entrés sont différents, merci de les saisir �  nouveau." );
+                throw new FormValidationException(
+                        "Les mots de passe entrés sont différents, merci de les saisir �  nouveau." );
             } else if ( motDePasse.length() < 3 ) {
                 throw new FormValidationException( "Les mots de passe doivent contenir au moins 3 caractères." );
             }
@@ -150,7 +152,7 @@ public final class InscriptionForm {
     }
 
     /*
-     * Ajoute un message correspondant au champ spécifié �  la map des erreurs.
+     * Ajoute un message correspondant au champ spécifié � la map des erreurs.
      */
     private void setErreur( String champ, String message ) {
         erreurs.put( champ, message );
